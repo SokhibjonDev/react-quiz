@@ -5,8 +5,11 @@ import { AnswersList } from './AnswersList/AnswersList.js'
 export const ActiveQuiz = (props) => {
     return (
         <div className={classes.ActiveQuiz}>
-            <p className={classes.Question}> <strong>2.</strong>Who was discovered US ?</p>
-            <AnswersList answers={props.answers}/>
+            <p className={classes.Question}><strong>{props.activeQuestion}</strong>.{props.question}</p>
+
+            <small>{props.activeQuestion} in {props.quizLength}</small>
+
+            <AnswersList answers={props.answers} onAnswerClick={props.onAnswerClick} />
         </div>
     )
 }
